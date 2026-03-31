@@ -147,21 +147,16 @@ function initModal() {
   const confirmBtn = document.getElementById('modal-confirm-btn');
   const backdrop   = document.getElementById('modal-backdrop');
 
-  // Guard: all elements must exist
   if (!openBtn || !closeBtn || !backdrop) return;
 
   openBtn.addEventListener('click',   openModal);
   closeBtn.addEventListener('click',  closeModal);
   cancelBtn?.addEventListener('click', closeModal);
 
-  // Confirm: do your action, then close
   confirmBtn?.addEventListener('click', () => {
-    console.log('Action confirmed'); // Replace with real logic
+    console.log('Action confirmed');
     closeModal();
   });
 
-  // Click outside modal (on backdrop) to close
   backdrop.addEventListener('click', closeModal);
 }
-
-document.addEventListener('DOMContentLoaded', initModal);

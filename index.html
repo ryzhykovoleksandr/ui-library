@@ -34,7 +34,6 @@
 
   <!-- Component loader -->
   <script>
-    // Lightweight include system — no build tools needed
     async function loadComponent(containerId, filePath) {
       try {
         const res = await fetch(filePath);
@@ -46,13 +45,16 @@
       }
     }
 
-    loadComponent('section-buttons', 'components/buttons.html');
-    loadComponent('section-cards',   'components/cards.html');
-    loadComponent('section-forms',   'components/forms.html');
-    loadComponent('section-modal',   'components/modal.html');
+    (async function() {
+      await loadComponent('section-buttons', 'components/buttons.html');
+      await loadComponent('section-cards',   'components/cards.html');
+      await loadComponent('section-forms',   'components/forms.html');
+      await loadComponent('section-modal',   'components/modal.html');
+      initModal();
+      window.initValidation?.();
+    })();
   </script>
 
-  <!-- Load validation AFTER components are injected -->
   <script src="js/validation.js" defer></script>
   <script src="js/modal.js" defer></script>
 </body>

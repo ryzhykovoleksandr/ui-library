@@ -182,5 +182,4 @@ function initForm() {
   });
 }
 
-// Run after DOM is ready
-document.addEventListener('DOMContentLoaded', initForm);
+window.initValidation = initForm;
