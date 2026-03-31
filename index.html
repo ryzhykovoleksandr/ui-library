@@ -1,39 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="A handcrafted UI component library built with HTML,
+                 Tailwind CSS and vanilla JavaScript." />
   <title>UI Component Library</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
-  <header class="bg-white border-b border-gray-200 px-6 py-4">
-    <h1 class="text-2xl font-bold tracking-tight">UI Component Library</h1>
-    <p class="text-sm text-gray-500 mt-1">
-      A showcase of reusable components built with HTML, Tailwind CSS & JavaScript
-    </p>
+  <!-- ── Theme toggle ─────────────────────────────────────────── -->
+  <button
+    class="theme-toggle"
+    id="theme-toggle"
+    type="button"
+    aria-label="Toggle dark mode"
+    title="Toggle dark mode"
+  >
+    <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24"
+         fill="none" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+            stroke="currentColor" stroke-width="1.75"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24"
+         fill="none" aria-hidden="true" hidden>
+      <circle cx="12" cy="12" r="5"
+              stroke="currentColor" stroke-width="1.75"/>
+      <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72
+               1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42
+               M18.36 5.64l1.42-1.42"
+            stroke="currentColor" stroke-width="1.75"
+            stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- ── Sticky side navigation ───────────────────────────────── -->
+  <nav class="site-nav" aria-label="Component sections">
+    <a class="site-nav__link" href="#section-buttons">
+      <span class="site-nav__dot"></span>Buttons
+    </a>
+    <a class="site-nav__link" href="#section-cards">
+      <span class="site-nav__dot"></span>Cards
+    </a>
+    <a class="site-nav__link" href="#section-forms">
+      <span class="site-nav__dot"></span>Forms
+    </a>
+    <a class="site-nav__link" href="#section-modal">
+      <span class="site-nav__dot"></span>Modal
+    </a>
+    <a class="site-nav__link" href="#section-tabs">
+      <span class="site-nav__dot"></span>Tabs
+    </a>
+    <a class="site-nav__link" href="#section-dropdowns">
+      <span class="site-nav__dot"></span>Dropdown
+    </a>
+  </nav>
+
+  <!-- ── Header ───────────────────────────────────────────────── -->
+  <header class="bg-white border-b border-gray-200 px-6 py-5">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-3 mb-1">
+        <span class="text-2xl" aria-hidden="true">⬡</span>
+        <h1 class="text-2xl font-bold tracking-tight">
+          UI Component Library
+        </h1>
+      </div>
+      <p class="text-sm text-gray-500 ml-9">
+        Accessible, reusable components — HTML · Tailwind CSS · Vanilla JS
+      </p>
+    </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-10 space-y-16">
-    <!-- Components will be embedded here step by step -->
-    <!-- Buttons -->
+  <!-- ── Main content ─────────────────────────────────────────── -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
     <div id="section-buttons"></div>
-    <!-- Cards -->
     <div id="section-cards"></div>
-    <!-- Forms -->
     <div id="section-forms"></div>
-    <!-- Modals -->
     <div id="section-modal"></div>
-    <!-- Tabs -->
     <div id="section-tabs"></div>
-    <!-- Dropdownss -->
     <div id="section-dropdowns"></div>
   </main>
 
-  <footer class="text-center text-sm text-gray-400 py-8">
-    Built with Tailwind CSS · MIT License
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="border-t border-gray-200 mt-12">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex flex-wrap
+                items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">
+        Built with Tailwind CSS · MIT License
+      </p>
+      <div class="flex gap-4 text-sm text-gray-400">
+        <a href="https://github.com/ryzhykovoleksandr/ui-library"
+           class="hover:text-gray-600 transition-colors"
+           target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href="https://www.w3.org/WAI/ARIA/apg/"
+           class="hover:text-gray-600 transition-colors"
+           target="_blank" rel="noopener noreferrer">
+          ARIA Patterns
+        </a>
+      </div>
+    </div>
   </footer>
 
   <!-- Component loader -->
@@ -60,6 +131,8 @@
       window.initValidation?.();
       initTabs();
       initDropdowns();
+      initTheme();
+      initNav();
     })();
   </script>
 
@@ -67,5 +140,7 @@
   <script src="js/modal.js" defer></script>
   <script src="js/tabs.js" defer></script>
   <script src="js/dropdown.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/nav.js" defer></script>
 </body>
 </html>
