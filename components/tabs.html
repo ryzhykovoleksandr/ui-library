@@ -1,0 +1,241 @@
+<!-- ============================================================
+     COMPONENT: Tabs
+     Pattern:   W3C APG "Tabs with Automatic Activation"
+     Keyboard:  Arrow keys navigate + activate tabs
+                Tab key moves focus in/out of tablist
+                Home / End jump to first / last
+     ============================================================ -->
+
+<section id="tabs" aria-labelledby="tabs-heading">
+  <h2 id="tabs-heading" class="text-xl font-semibold mb-6 text-gray-800">
+    Tabs
+  </h2>
+
+  <div class="tabs" id="demo-tabs">
+
+    <!-- ── Tab list ───────────────────────────────────────────── -->
+    <div class="tabs__list" role="tablist" aria-label="Demo tabs">
+
+      <button
+        class="tabs__tab"
+        role="tab"
+        id="tab-overview"
+        aria-selected="true"
+        aria-controls="panel-overview"
+        tabindex="0"
+        type="button"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             aria-hidden="true" focusable="false">
+          <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2
+                   2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0
+                   011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Overview
+      </button>
+
+      <button
+        class="tabs__tab"
+        role="tab"
+        id="tab-features"
+        aria-selected="false"
+        aria-controls="panel-features"
+        tabindex="-1"
+        type="button"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             aria-hidden="true" focusable="false">
+          <path d="M5 13l4 4L19 7"
+                stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Features
+      </button>
+
+      <button
+        class="tabs__tab"
+        role="tab"
+        id="tab-pricing"
+        aria-selected="false"
+        aria-controls="panel-pricing"
+        tabindex="-1"
+        type="button"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             aria-hidden="true" focusable="false">
+          <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343
+                   2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0
+                   0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18
+                   0 9 9 0 0118 0z"
+                stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Pricing
+      </button>
+
+      <button
+        class="tabs__tab"
+        role="tab"
+        id="tab-faq"
+        aria-selected="false"
+        aria-controls="panel-faq"
+        tabindex="-1"
+        type="button"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             aria-hidden="true" focusable="false">
+          <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4
+                   3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994
+                   1.093M12 17h.01"
+                stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        FAQ
+      </button>
+
+    </div>
+
+    <!-- ── Tab panels ─────────────────────────────────────────── -->
+
+    <div
+      class="tabs__panel"
+      role="tabpanel"
+      id="panel-overview"
+      aria-labelledby="tab-overview"
+      tabindex="0"
+    >
+      <h3 class="tabs__panel-title">Product Overview</h3>
+      <p class="tabs__panel-text">
+        This component library gives your team a shared visual language —
+        consistent spacing, typography, and interaction patterns across
+        every surface of your product.
+      </p>
+      <div class="tabs__panel-grid">
+        <div class="tabs__stat">
+          <span class="tabs__stat-value">12</span>
+          <span class="tabs__stat-label">Components</span>
+        </div>
+        <div class="tabs__stat">
+          <span class="tabs__stat-value">100%</span>
+          <span class="tabs__stat-label">Accessible</span>
+        </div>
+        <div class="tabs__stat">
+          <span class="tabs__stat-value">0</span>
+          <span class="tabs__stat-label">Dependencies</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="tabs__panel"
+      role="tabpanel"
+      id="panel-features"
+      aria-labelledby="tab-features"
+      tabindex="0"
+      hidden
+    >
+      <h3 class="tabs__panel-title">Features</h3>
+      <ul class="tabs__feature-list">
+        <li class="tabs__feature-item">
+          <span class="tabs__feature-icon" aria-hidden="true">✦</span>
+          Keyboard navigation on all interactive components
+        </li>
+        <li class="tabs__feature-item">
+          <span class="tabs__feature-icon" aria-hidden="true">✦</span>
+          ARIA roles and live regions throughout
+        </li>
+        <li class="tabs__feature-item">
+          <span class="tabs__feature-icon" aria-hidden="true">✦</span>
+          Zero build step — runs directly in the browser
+        </li>
+        <li class="tabs__feature-item">
+          <span class="tabs__feature-icon" aria-hidden="true">✦</span>
+          BEM class structure — predictable and collision-free
+        </li>
+        <li class="tabs__feature-item">
+          <span class="tabs__feature-icon" aria-hidden="true">✦</span>
+          One JS file per component — no global state pollution
+        </li>
+      </ul>
+    </div>
+
+    <div
+      class="tabs__panel"
+      role="tabpanel"
+      id="panel-pricing"
+      aria-labelledby="tab-pricing"
+      tabindex="0"
+      hidden
+    >
+      <h3 class="tabs__panel-title">Pricing</h3>
+      <div class="tabs__pricing-grid">
+
+        <div class="tabs__pricing-card">
+          <p class="tabs__pricing-tier">Free</p>
+          <p class="tabs__pricing-price">$0<span>/mo</span></p>
+          <p class="tabs__pricing-desc">
+            All components, forever. No credit card required.
+          </p>
+        </div>
+
+        <div class="tabs__pricing-card tabs__pricing-card--featured">
+          <p class="tabs__pricing-tier">Pro</p>
+          <p class="tabs__pricing-price">$12<span>/mo</span></p>
+          <p class="tabs__pricing-desc">
+            Priority support, Figma kit, and early access to new components.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div
+      class="tabs__panel"
+      role="tabpanel"
+      id="panel-faq"
+      aria-labelledby="tab-faq"
+      tabindex="0"
+      hidden
+    >
+      <h3 class="tabs__panel-title">Frequently Asked Questions</h3>
+      <dl class="tabs__faq-list">
+
+        <div class="tabs__faq-item">
+          <dt class="tabs__faq-question">
+            Do I need a build step to use this library?
+          </dt>
+          <dd class="tabs__faq-answer">
+            No. Every component runs directly in the browser via a
+            CDN-loaded Tailwind stylesheet and vanilla JS files.
+          </dd>
+        </div>
+
+        <div class="tabs__faq-item">
+          <dt class="tabs__faq-question">
+            Is this library accessible?
+          </dt>
+          <dd class="tabs__faq-answer">
+            Yes. All interactive components implement the W3C ARIA
+            Authoring Practices patterns and pass keyboard navigation
+            and screen reader testing.
+          </dd>
+        </div>
+
+        <div class="tabs__faq-item">
+          <dt class="tabs__faq-question">
+            Can I use this in a React or Vue project?
+          </dt>
+          <dd class="tabs__faq-answer">
+            The HTML structure and CSS patterns are framework-agnostic.
+            The JS would need porting, but the component architecture
+            translates directly.
+          </dd>
+        </div>
+
+      </dl>
+    </div>
+
+  </div>
+</section>

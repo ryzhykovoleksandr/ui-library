@@ -26,6 +26,8 @@
     <div id="section-forms"></div>
     <!-- Modals -->
     <div id="section-modal"></div>
+    <!-- Tabs -->
+    <div id="section-tabs"></div>
   </main>
 
   <footer class="text-center text-sm text-gray-400 py-8">
@@ -50,12 +52,15 @@
       await loadComponent('section-cards',   'components/cards.html');
       await loadComponent('section-forms',   'components/forms.html');
       await loadComponent('section-modal',   'components/modal.html');
+      await loadComponent('section-tabs',   'components/tabs.html');
       initModal();
       window.initValidation?.();
+      initTabs();
     })();
   </script>
 
   <script src="js/validation.js" defer></script>
   <script src="js/modal.js" defer></script>
+  <script src="js/tabs.js" defer></script>
 </body>
 </html>
