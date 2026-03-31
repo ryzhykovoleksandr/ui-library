@@ -1,0 +1,225 @@
+<!-- ============================================================
+     COMPONENT: Dropdown
+     Pattern:   ARIA Disclosure Button + Menu/Menuitem roles
+     Keyboard:  Enter/Space open · Arrow keys navigate
+                Escape close · Tab close · Home/End jump
+     Multiple:  Three variants shown — actions, select-style, icon
+     ============================================================ -->
+
+<section id="dropdowns" aria-labelledby="dropdowns-heading">
+  <h2 id="dropdowns-heading" class="text-xl font-semibold mb-6 text-gray-800">
+    Dropdown
+  </h2>
+
+  <div class="flex flex-wrap gap-6 items-start">
+
+    <!-- ── Variant 1: Actions menu ────────────────────────────── -->
+    <div class="dropdown" id="dropdown-actions">
+
+      <button
+        class="btn btn-primary dropdown__trigger"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menu-actions"
+        id="trigger-actions"
+      >
+        Actions
+        <svg class="dropdown__chevron" width="14" height="14"
+             viewBox="0 0 20 20" fill="currentColor"
+             aria-hidden="true" focusable="false">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10
+               10.586l3.293-3.293a1 1 0 111.414
+               1.414l-4 4a1 1 0 01-1.414 0l-4-4a1
+               1 0 010-1.414z"/>
+        </svg>
+      </button>
+
+      <ul
+        class="dropdown__menu"
+        role="menu"
+        id="menu-actions"
+        aria-labelledby="trigger-actions"
+        hidden
+      >
+        <li role="none">
+          <button class="dropdown__item" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                 aria-hidden="true" focusable="false">
+              <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2
+                       0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828
+                       15H9v-2.828l8.586-8.586z"
+                    stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Edit
+          </button>
+        </li>
+        <li role="none">
+          <button class="dropdown__item" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                 aria-hidden="true" focusable="false">
+              <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0
+                       012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2
+                       2 0 00-2 2v8a2 2 0 002 2z"
+                    stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Duplicate
+          </button>
+        </li>
+
+        <!-- Divider -->
+        <li class="dropdown__divider" role="separator" aria-hidden="true"></li>
+
+        <li role="none">
+          <button class="dropdown__item" role="menuitem" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                 aria-hidden="true" focusable="false">
+              <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0
+                       0L8 8m4-4v12"
+                    stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Export
+          </button>
+        </li>
+
+        <!-- Divider -->
+        <li class="dropdown__divider" role="separator" aria-hidden="true"></li>
+
+        <li role="none">
+          <button
+            class="dropdown__item dropdown__item--danger"
+            role="menuitem"
+            type="button"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                 aria-hidden="true" focusable="false">
+              <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2
+                       2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1
+                       0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                    stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Delete
+          </button>
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- ── Variant 2: Select-style (label + options) ──────────── -->
+    <div class="dropdown" id="dropdown-select">
+
+      <button
+        class="btn btn-secondary dropdown__trigger dropdown__trigger--select"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menu-select"
+        id="trigger-select"
+      >
+        <span id="select-label">Select role</span>
+        <svg class="dropdown__chevron" width="14" height="14"
+             viewBox="0 0 20 20" fill="currentColor"
+             aria-hidden="true" focusable="false">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10
+               10.586l3.293-3.293a1 1 0 111.414
+               1.414l-4 4a1 1 0 01-1.414 0l-4-4a1
+               1 0 010-1.414z"/>
+        </svg>
+      </button>
+
+      <ul
+        class="dropdown__menu"
+        role="menu"
+        id="menu-select"
+        aria-labelledby="trigger-select"
+        hidden
+      >
+        <li role="none">
+          <button class="dropdown__item dropdown__item--option"
+                  role="menuitem" type="button"
+                  data-value="admin">
+            <span class="dropdown__option-dot" style="background:#6366f1"></span>
+            Admin
+          </button>
+        </li>
+        <li role="none">
+          <button class="dropdown__item dropdown__item--option"
+                  role="menuitem" type="button"
+                  data-value="editor">
+            <span class="dropdown__option-dot" style="background:#10b981"></span>
+            Editor
+          </button>
+        </li>
+        <li role="none">
+          <button class="dropdown__item dropdown__item--option"
+                  role="menuitem" type="button"
+                  data-value="viewer">
+            <span class="dropdown__option-dot" style="background:#9ca3af"></span>
+            Viewer
+          </button>
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- ── Variant 3: Icon-only trigger (kebab menu) ──────────── -->
+    <div class="dropdown" id="dropdown-icon">
+
+      <button
+        class="dropdown__trigger dropdown__trigger--icon"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menu-icon"
+        aria-label="More options"
+        id="trigger-icon"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+             aria-hidden="true" focusable="false">
+          <circle cx="12" cy="5"  r="1.5"/>
+          <circle cx="12" cy="12" r="1.5"/>
+          <circle cx="12" cy="19" r="1.5"/>
+        </svg>
+      </button>
+
+      <ul
+        class="dropdown__menu dropdown__menu--right"
+        role="menu"
+        id="menu-icon"
+        aria-labelledby="trigger-icon"
+        hidden
+      >
+        <li role="none">
+          <button class="dropdown__item" role="menuitem" type="button">
+            View details
+          </button>
+        </li>
+        <li role="none">
+          <button class="dropdown__item" role="menuitem" type="button">
+            Copy link
+          </button>
+        </li>
+        <li role="none">
+          <button class="dropdown__item" role="menuitem" type="button">
+            Pin to top
+          </button>
+        </li>
+        <li class="dropdown__divider" role="separator" aria-hidden="true"></li>
+        <li role="none">
+          <button class="dropdown__item dropdown__item--danger"
+                  role="menuitem" type="button">
+            Remove
+          </button>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</section>
