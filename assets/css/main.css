@@ -10,3 +10,75 @@
   outline: 2px solid #6366f1;
   outline-offset: 2px;
 }
+
+/* ----------------------------------------------------------
+   BUTTONS
+   Base class:    .btn
+   Variants:      .btn-primary  .btn-secondary  .btn-disabled
+   ---------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;             /* space for optional icon */
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;     /* 14px */
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease,
+              border-color 150ms ease,
+              box-shadow 150ms ease,
+              opacity 150ms ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Remove default browser button styles leaking through */
+.btn:focus {
+  outline: none;
+}
+
+/* ---- Variants ---- */
+
+.btn-primary {
+  background-color: #6366f1;   /* indigo-500 */
+  color: #ffffff;
+  border-color: #6366f1;
+}
+
+.btn-primary:hover {
+  background-color: #4f46e5;   /* indigo-600 */
+  border-color: #4f46e5;
+}
+
+.btn-primary:active {
+  background-color: #4338ca;   /* indigo-700 */
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #374151;              /* gray-700 */
+  border-color: #d1d5db;       /* gray-300 */
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;   /* gray-50 */
+  border-color: #9ca3af;       /* gray-400 */
+}
+
+.btn-secondary:active {
+  background-color: #f3f4f6;
+}
+
+.btn-disabled {
+  background-color: #e5e7eb;   /* gray-200 */
+  color: #9ca3af;              /* gray-400 */
+  border-color: #e5e7eb;
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events: none;        /* prevents all mouse interaction */
+}

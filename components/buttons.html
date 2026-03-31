@@ -1,0 +1,31 @@
+<!-- ============================================================
+     COMPONENT: Button
+     Variants:  primary | secondary | disabled
+     Usage:     Copy the <button> block you need into your project.
+                Always include the base `btn` class + one variant.
+     ============================================================ -->
+
+<section id="buttons" aria-labelledby="buttons-heading">
+  <h2 id="buttons-heading" class="text-xl font-semibold mb-6 text-gray-800">
+    Buttons
+  </h2>
+
+  <div class="flex flex-wrap gap-4 items-center">
+
+    <!-- Primary: main call-to-action -->
+    <button class="btn btn-primary" type="button">
+      Primary
+    </button>
+
+    <!-- Secondary: lower-priority action -->
+    <button class="btn btn-secondary" type="button">
+      Secondary
+    </button>
+
+    <!-- Disabled: use aria-disabled + disabled attr together -->
+    <button class="btn btn-disabled" type="button" disabled aria-disabled="true">
+      Disabled
+    </button>
+
+  </div>
+</section>

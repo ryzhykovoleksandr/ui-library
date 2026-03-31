@@ -18,11 +18,29 @@
 
   <main class="max-w-5xl mx-auto px-6 py-10 space-y-16">
     <!-- Components will be embedded here step by step -->
+    <!-- Buttons -->
+    <div id="section-buttons"></div>
   </main>
 
   <footer class="text-center text-sm text-gray-400 py-8">
     Built with Tailwind CSS · MIT License
   </footer>
 
+  <!-- Component loader -->
+  <script>
+    // Lightweight include system — no build tools needed
+    async function loadComponent(containerId, filePath) {
+      try {
+        const res = await fetch(filePath);
+        if (!res.ok) throw new Error(`Failed to load ${filePath}`);
+        const html = await res.text();
+        document.getElementById(containerId).innerHTML = html;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    loadComponent('section-buttons', 'components/buttons.html');
+  </script>
 </body>
 </html>
