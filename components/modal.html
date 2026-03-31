@@ -1,0 +1,97 @@
+<!-- ============================================================
+     COMPONENT: Modal
+     Trigger:   #modal-open-btn
+     Behaviour: open · close via (X / backdrop / Escape)
+                focus trap · scroll lock · aria-modal
+     ============================================================ -->
+
+<section id="modals" aria-labelledby="modals-heading">
+  <h2 id="modals-heading" class="text-xl font-semibold mb-6 text-gray-800">
+    Modal
+  </h2>
+
+  <!-- Trigger button -->
+  <button
+    class="btn btn-primary"
+    type="button"
+    id="modal-open-btn"
+    aria-haspopup="dialog"
+  >
+    Open modal
+  </button>
+
+  <!-- ── Modal Backdrop ─────────────────────────────────────── -->
+  <div
+    class="modal-backdrop"
+    id="modal-backdrop"
+    aria-hidden="true"
+  ></div>
+
+  <!-- ── Modal Dialog ───────────────────────────────────────── -->
+  <div
+    class="modal"
+    id="demo-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-describedby="modal-description"
+    tabindex="-1"
+  >
+
+    <!-- Header -->
+    <div class="modal__header">
+      <h3 class="modal__title" id="modal-title">
+        Confirm action
+      </h3>
+      <button
+        class="modal__close"
+        type="button"
+        id="modal-close-btn"
+        aria-label="Close modal"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+             aria-hidden="true" focusable="false">
+          <path d="M6 6l8 8M14 6l-8 8"
+                stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="modal__body">
+      <p class="modal__description" id="modal-description">
+        Are you sure you want to delete this item? 
+        This action <strong>cannot be undone</strong> and will 
+        permanently remove all associated data.
+      </p>
+
+      <!-- Inner focusable element to test focus trap -->
+      <label class="form__label" style="margin-top: 1rem; display: block;">
+        <input type="checkbox" style="margin-right: 0.4rem;" />
+        I understand this action is permanent
+      </label>
+    </div>
+
+    <!-- Footer -->
+    <div class="modal__footer">
+      <button
+        class="btn btn-secondary"
+        type="button"
+        id="modal-cancel-btn"
+      >
+        Cancel
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        id="modal-confirm-btn"
+        style="background-color: #ef4444; border-color: #ef4444;"
+      >
+        Delete permanently
+      </button>
+    </div>
+
+  </div>
+
+</section>
