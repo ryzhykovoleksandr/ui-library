@@ -1,0 +1,93 @@
+<!-- ============================================================
+     COMPONENT: Card
+     Variants:  article | profile | stat
+     Structure: header (media) · body (content) · footer (action)
+     Usage:     Use .card as wrapper. Slots are optional — omit
+                any section you don't need.
+     ============================================================ -->
+
+<section id="cards" aria-labelledby="cards-heading">
+  <h2 id="cards-heading" class="text-xl font-semibold mb-6 text-gray-800">
+    Cards
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- ── Variant 1: Article card ─────────────────────────── -->
+    <article class="card" aria-label="Article preview card">
+
+      <!-- Card Header: media slot -->
+      <div class="card__media">
+        <img
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80"
+          alt="Code on a screen"
+          class="card__image"
+          loading="lazy"
+        />
+        <span class="card__badge">Tutorial</span>
+      </div>
+
+      <!-- Card Body: content slot -->
+      <div class="card__body">
+        <h3 class="card__title">
+          Building Design Systems That Scale
+        </h3>
+        <p class="card__description">
+          Learn how senior engineers structure component libraries
+          to survive years of product evolution without rewrites.
+        </p>
+      </div>
+
+      <!-- Card Footer: action slot -->
+      <div class="card__footer">
+        <span class="card__meta">5 min read · Jan 2025</span>
+        <a href="#" class="btn btn-primary" style="padding: 0.375rem 0.875rem; font-size: 0.8rem;">
+          Read more
+        </a>
+      </div>
+
+    </article>
+
+    <!-- ── Variant 2: Profile card ─────────────────────────── -->
+    <article class="card card--centered" aria-label="Team member profile card">
+
+      <div class="card__media card__media--avatar">
+        <img
+          src="https://i.pravatar.cc/150?img=47"
+          alt="Portrait of Alex Johnson"
+          class="card__avatar"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="card__body">
+        <h3 class="card__title">Alex Johnson</h3>
+        <p class="card__subtitle">Senior Frontend Engineer</p>
+        <p class="card__description">
+          Specializes in design systems, accessibility, and
+          performance optimization across large-scale React apps.
+        </p>
+      </div>
+
+      <div class="card__footer card__footer--centered">
+        <a href="#" class="btn btn-secondary">View Profile</a>
+      </div>
+
+    </article>
+
+    <!-- ── Variant 3: Stat card (no media) ─────────────────── -->
+    <div class="card card--stat" role="region" aria-label="Statistic card">
+
+      <div class="card__body">
+        <div class="card__stat-icon" aria-hidden="true">📦</div>
+        <p class="card__stat-label">Components Shipped</p>
+        <p class="card__stat-value">48</p>
+        <p class="card__stat-delta card__stat-delta--up">
+          ↑ 12% this month
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
