@@ -1,0 +1,127 @@
+<!-- ============================================================
+     COMPONENT: Form Elements
+     Includes:  text input · email input · textarea · submit
+     Behaviour: validate on blur · full check on submit
+                novalidate — JS owns all validation
+     ============================================================ -->
+
+<section id="forms" aria-labelledby="forms-heading">
+  <h2 id="forms-heading" class="text-xl font-semibold mb-6 text-gray-800">
+    Form Elements
+  </h2>
+
+  <div class="card" style="max-width: 560px;">
+    <div class="card__body" style="gap: 0;">
+
+      <form
+        id="demo-form"
+        class="form"
+        novalidate
+        aria-label="Demo contact form"
+      >
+
+        <!-- ── Full Name ───────────────────────────────────── -->
+        <div class="form__group" data-field="name">
+          <label class="form__label" for="field-name">
+            Full name
+            <span class="form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="form__input"
+            type="text"
+            id="field-name"
+            name="name"
+            placeholder="Jane Smith"
+            autocomplete="name"
+            aria-required="true"
+            aria-describedby="field-name-error"
+          />
+          <span
+            class="form__error"
+            id="field-name-error"
+            role="alert"
+            aria-live="polite"
+          ></span>
+        </div>
+
+        <!-- ── Email ──────────────────────────────────────── -->
+        <div class="form__group" data-field="email">
+          <label class="form__label" for="field-email">
+            Email address
+            <span class="form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="form__input"
+            type="email"
+            id="field-email"
+            name="email"
+            placeholder="jane@example.com"
+            autocomplete="email"
+            aria-required="true"
+            aria-describedby="field-email-hint field-email-error"
+          />
+          <span class="form__hint" id="field-email-hint">
+            We'll never share your email with anyone.
+          </span>
+          <span
+            class="form__error"
+            id="field-email-error"
+            role="alert"
+            aria-live="polite"
+          ></span>
+        </div>
+
+        <!-- ── Message ────────────────────────────────────── -->
+        <div class="form__group" data-field="message">
+          <label class="form__label" for="field-message">
+            Message
+            <span class="form__required" aria-hidden="true">*</span>
+          </label>
+          <textarea
+            class="form__input form__textarea"
+            id="field-message"
+            name="message"
+            placeholder="Write your message here..."
+            rows="4"
+            aria-required="true"
+            aria-describedby="field-message-hint field-message-error"
+          ></textarea>
+          <div class="form__footer-row">
+            <span
+              class="form__error"
+              id="field-message-error"
+              role="alert"
+              aria-live="polite"
+            ></span>
+            <span class="form__char-count" id="field-message-count">
+              0 / 300
+            </span>
+          </div>
+        </div>
+
+        <!-- ── Submit ─────────────────────────────────────── -->
+        <div class="form__actions">
+          <button type="submit" class="btn btn-primary" id="form-submit-btn">
+            Send message
+          </button>
+          <button type="reset" class="btn btn-secondary" id="form-reset-btn">
+            Clear
+          </button>
+        </div>
+
+        <!-- ── Success banner (hidden by default) ─────────── -->
+        <div
+          class="form__success"
+          id="form-success"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          ✅ Message sent successfully! We'll get back to you shortly.
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
